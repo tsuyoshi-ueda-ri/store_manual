@@ -1,0 +1,103 @@
+header {
+  padding: 10px;
+  border-bottom: 1px solid #D8D8D8;
+  background-color: rgba(107, 205, 253,0.8);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  height: 62px;
+  font-family: "HanziPen SC";
+}
+
+.header__bar.row{
+  position: relative;
+}
+
+.row {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  max-width: 660px;
+  font-size: 20px;
+  line-height: 1.2em;
+}
+
+nav {
+  position: relative;
+  top: -70px;
+  font-size: 20px;
+}
+
+.container {
+  padding-left: 30px;
+}
+
+.title {
+  font-size: 30px;
+  padding: 35px 0;
+  color: #35b72c;
+  float: left;
+}
+
+.index-data {
+  font-size: 20px;
+}
+
+.index-data-name {
+  color: #271206;
+  font-size: 20px;
+  line-height: 2em;
+}
+
+.index-data-content {
+  color: #0a0a25;
+  width: 600px;
+  padding-left: 50px;
+  font-size: 16px;
+}
+
+.index-cell {
+  color: #0a0a25;
+}
+
+table {
+  border: 2px solid #7facc9;
+}
+
+thead th {
+  border-bottom: 2px solid #7facc9;
+}
+
+tbody td {
+  border-bottom: 1px dashed #cccccc;
+}
+
+.index-data-viewing {
+  font-size: 18px;
+  padding: 0 15px;
+  border-right: 1px dashed #cccccc;
+  border-left: 1px dashed #cccccc;
+}
+
+.index-data-updata {
+  font-size: 18px;
+  padding: 0 15px;
+  border-right: 1px dashed #cccccc;
+}
+
+.index-data-delete {
+  font-size: 18px;
+  padding: 0 15px;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  height: 1600px;
+}
