@@ -1,28 +1,28 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
+  <strong>タイトル:</strong>
   <%= @movie.title %>
 </p>
 
 <p>
-  <strong>Content:</strong>
+  <strong>説明:</strong>
   <%= sanitize @movie.content, tags: %w(h1 h2 h3 h4 h5 h6 ul ol li p a img table tr td em br strong div), attributes: %w(id class href) %>
 </p>
 
 <p>
-  <strong>movies:</strong>
+  <strong>動画:</strong>
   <% if @movie.movie.attached? %>
     <%= video_tag rails_blob_path(@movie.movie, disposition: "attachment"), :controls => true %>
   <% end %>
 </p>
 
-<h2>Comments</h2>
+<h2>コメント</h2>
   <div id="comments">
     <%= render @movie.comments %>
   </div>
 
 <%= render 'comments/new', movie: @movie %>
 
-<%= link_to 'Edit', edit_movie_path(@movie) %> |
-<%= link_to 'Back', movies_path %>
+<%= link_to '編集', edit_movie_path(@movie) %> |
+<%= link_to '戻る', movies_path %>

@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>StoreManual</title>
+    <title>三田店動画マニュアル</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,9 +13,16 @@
   </head>
 
   <body>
-    <%= render 'layouts/header'%>
-    <div class="container">
-      <%= yield %>
-    </div>
+    <header class="header">
+      <div class="header__bar row">
+        <h1 class="grid-6">三田店動画マニュアル</h1>
+        <div class="user_nav grid-6">
+        </div>
+      </div>
+      <%= render 'layouts/header'%>
+      <div class="container">
+        <%= yield %>
+      </div>
+    </header>
   </body>
 </html>

@@ -1,23 +1,23 @@
 <p id="notice"><%= notice %></p>
+<div id="page" class="site"> 
+<h1>マニュアル一覧</h1>
 
-<h1>Movies</h1>
-
-<table>
+<table class="index-cell">
   <thead>
     <tr>
-      <th>Title</th>
+      <th class="title">[Title]</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @movies.each do |movie| %>
-      <tr>
-        <td><%= movie.title %></td>
-        <td><%= movie.content %></td>
-        <td><%= link_to 'Show', movie %></td>
-        <td><%= link_to 'Edit', edit_movie_path(movie) %></td>
-        <td><%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <tr class="index-data">
+        <td class="index-data-name"><%= movie.title %></td>
+        <td class="index-data-content"><%= movie.content %></td>
+        <td class="index-data-viewing"><%= link_to '視聴', movie %></td>
+        <td class="index-data-updata"><%= link_to '編集', edit_movie_path(movie) %></td>
+        <td class="index-data-delete"><%= link_to '削除', movie, method: :delete, data: { confirm: '削除しますか?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -25,4 +25,4 @@
 
 <br>
 
-<%= link_to 'New Movie', new_movie_path %>
+<%= link_to '投稿する', new_movie_path %>
