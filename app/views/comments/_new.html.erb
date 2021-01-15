@@ -1,5 +1,5 @@
 <%= form_with(model: [ @movie, Comment.new ], remote: true) do |form| %>
-    Your Comment:<br>
+    質問があれば気軽にコメントしよう！<br>
     <%= form.hidden_field :content, id: :movie_comments %>
     <trix-editor input="movie_comments"></trix-editor>
     <%= form.submit %>

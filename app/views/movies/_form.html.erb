@@ -12,18 +12,18 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :title %>
+    <%= form.label :タイトル %>
     <%= form.text_field :title %>
   </div>
 
   <div class="field">
-    <%= form.label :content %>
+    <%= form.label :説明 %>
     <%= form.hidden_field :content, id: :movie_content %>
     <trix-editor input="movie_content"></trix-editor>
   </div>
 
   <div class="field">
-    <%= form.label :movie %>
+    <%= form.label :投稿するファイル %>
     <%= form.file_field :movie %>
   </div>
 
