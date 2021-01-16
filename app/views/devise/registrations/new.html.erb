@@ -5,6 +5,11 @@
       <%= devise_error_messages! %>
 
       <div class="field">
+        <%= f.label :Name %> <em>(6 characters maximum)</em><br />
+        <%= f.text_field :Name, autofocus: true, maxlength: "8" %>
+      </div>
+
+      <div class="field">
         <%= f.label :email %><br />
         <%= f.email_field :email %>
       </div>
