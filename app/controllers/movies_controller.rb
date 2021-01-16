@@ -1,10 +1,11 @@
 class MoviesController < ApplicationController
   before_action :set_movie, only: [:show, :edit, :update, :destroy]
+  before_action :move_to_index, except: [:index]
 
   # GET /movies
   # GET /movies.json
   def index
-    @movies = Movie.all
+    @movies = Movie.includes(:user)
   end
 
   # GET /movies/1
@@ -70,5 +71,11 @@ class MoviesController < ApplicationController
     # Only allow a list of trusted parameters through.
     def movie_params
       params.require(:movie).permit(:title, :content, :movie)
+    end
+
+    def move_to_index
+      unless user_signed_in?
+        redirect_to action: :index
+      end
     end
 end
