@@ -5,7 +5,7 @@ class MoviesController < ApplicationController
   # GET /movies
   # GET /movies.json
   def index
-    @movies = Movie.includes(:user)
+    @movies = Movie.includes(:user).order("created_at DESC")
   end
 
   # GET /movies/1
