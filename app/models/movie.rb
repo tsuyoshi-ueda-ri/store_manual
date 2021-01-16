@@ -4,4 +4,12 @@ class Movie < ApplicationRecord
   has_many :comments, foreign_key: :movie_id, dependent: :destroy
   validates :movie,:title, presence: true
   belongs_to :user
+
+  def self.search(search)
+    if search != ""
+      Movie.where('title LIKE(?)', "%#{search}%")
+    else
+      Movie.all
+    end
+  end
 end
