@@ -7,7 +7,7 @@ class Movie < ApplicationRecord
 
   def self.search(search)
     if search != ""
-      Movie.where('title LIKE', "%#{search}%")
+      Movie.where('title LIKE(?)', "%#{search}%")
     else
       Movie.all
     end
