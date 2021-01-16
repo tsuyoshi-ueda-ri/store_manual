@@ -1,6 +1,6 @@
 class MoviesController < ApplicationController
   before_action :set_movie, only: [:show, :edit, :update, :destroy]
-  before_action :move_to_index, except: [:index]
+  before_action :move_to_index, except: [:index, :search]
 
   # GET /movies
   # GET /movies.json
@@ -60,6 +60,10 @@ class MoviesController < ApplicationController
       format.html { redirect_to movies_url, notice: '削除しました' }
       format.json { head :no_content }
     end
+  end
+
+  def search
+    @movies = Movie.search(params[:keyword])
   end
 
   private
