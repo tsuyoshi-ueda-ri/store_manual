@@ -1,17 +1,17 @@
 <div class="contents row">
   <div class="container">
-    <h2>Sign up</h2>
+    <h2>新規登録</h2>
     <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
       <%= devise_error_messages! %>
 
       <div class="field">
-        <%= f.label :Name %> <em>(6 characters maximum)</em><br />
-        <%= f.text_field :Name, autofocus: true, maxlength: "8" %>
+        <%= f.label :名前 %> <em>(最大８文字)</em><br />
+        <%= f.text_field :Name, autofocus: true, maxlength: "8", class: "name-field" %>
       </div>
 
       <div class="field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email %>
+        <%= f.label :メールアドレス %>
+        <%= f.email_field :email, class: "mail-field" %>
       </div>
 
       <div class="field">
@@ -23,12 +23,12 @@
       </div>
 
       <div class="field">
-        <%= f.label :password_confirmation %><br />
+        <%= f.label :password確認用 %><br />
         <%= f.password_field :password_confirmation, autocomplete: "off" %>
       </div>
 
       <div class="actions">
-        <%= f.submit "Sign up" %>
+        <%= f.submit "登録" %>
       </div>
     <% end %>
   </div>
