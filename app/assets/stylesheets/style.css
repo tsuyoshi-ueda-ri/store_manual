@@ -187,3 +187,9 @@ body {
 .main-title {
   text-align: center;
 }
+
+.pagination {
+  font-size: 12px;
+  display: inline-block;
+  top: 0;
+}
