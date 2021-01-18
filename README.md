@@ -13,8 +13,11 @@
 |title|string|------|
 |content|text|------|
 ### Association
-- belongs_to :user
-- has_many :comments
+- belongs_to :user, optional: true
+- has_many :comments, foreign_key: :movie_id, dependent: :destroy
+- has_many :tagmaps, dependent: :destroy
+- has_many :tags, through: :tagmaps
+  accepts_nested_attributes_for :tags
 
 ## active_storage_blobsテーブル
 |Column|Type|Options|
@@ -41,3 +44,22 @@
 |reset_password_token|string|-----|
 |reset_password_sent_at|datetime|-----|
 |Name|string|-------|
+### Association
+- has_many :movies
+
+## tags
+|Column|Type|Options|
+|------|----|-------|
+|tag_name|string|null: false|
+### Association
+- has_many :tagmaps, dependent: :destroy
+- has_many :movies, through: :tagmaps
+
+## tagmaps
+|Column|Type|Options|
+|------|----|-------|
+|movie|integer|null: false, foreign_key: true|
+|tag|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :movie
+- belongs_tp :tag
