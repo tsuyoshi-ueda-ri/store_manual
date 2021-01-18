@@ -1,11 +1,20 @@
 class MoviesController < ApplicationController
   before_action :set_movie, only: [:show, :edit, :update, :destroy]
-  before_action :move_to_index, except: [:index, :search]
+  before_action :move_to_index, except: [:index, :search, :top]
 
   # GET /movies
   # GET /movies.json
   def index
-    @movies = Movie.includes(:user).order("created_at DESC").page(params[:page]).per(10)
+    if params[:search].present?
+      @movies = Movie.titles_search(params[:search]).page(params[:page]).per(10)
+    elsif params[:tag_id].present?
+      @tag = Tag.find(params[:tag_id])
+      @movies = @tag.movies.order("created_at: :DESC").page(params[:page]).per(10)
+    else
+      @movies = Movie.includes(:user).order("created_at: :DESC").page(params[:page]).per(10)
+    end
+      @movies = Movie.includes(:user).order("created_at DESC").page(params[:page]).per(10)
+      @tag_lists = Tag.all
   end
 
   # GET /movies/1
@@ -25,10 +34,12 @@ class MoviesController < ApplicationController
   # POST /movies
   # POST /movies.json
   def create
+    # binding.pry
     @movie = Movie.new(movie_params)
-
+    tag_list = params[:movie][:tag_name].to_s.split('nil')
     respond_to do |format|
       if @movie.save
+        @movie.save_movies(tag_list)
         format.html { redirect_to @movie, notice: '投稿が完了しました' }
         format.json { render :show, status: :created, location: @movie }
       else
@@ -63,9 +74,13 @@ class MoviesController < ApplicationController
   end
 
   def search
-    @movies = Movie.search(params[:keyword])
+    @movies = Movie.search(params[:keyword]).page(params[:page]).per(10)
+    @tag_names = Tag.search(params[:keyword]).page(params[:page]).per(10)
   end
 
+  def top
+  
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_movie
@@ -74,7 +89,7 @@ class MoviesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def movie_params
-      params.require(:movie).permit(:title, :content, :movie)
+      params.require(:movie).permit(:title, :content, :movie, tags_attributes: [:tag_name])
     end
 
     def move_to_index

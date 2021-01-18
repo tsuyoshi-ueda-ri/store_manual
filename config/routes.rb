@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root 'movies#index'
+  root 'movies#top'
   resources :movies do
     resources :comments, :only => [:create, :destroy]
     collection do

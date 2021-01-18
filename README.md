@@ -1,4 +1,4 @@
-# STORE_MANUAL DB設計
+# STORE_MANUAL 
 ## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
