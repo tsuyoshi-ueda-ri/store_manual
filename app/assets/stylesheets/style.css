@@ -207,3 +207,32 @@ body {
 .pagination>li>a:hover {
   border-radius: 15px;
 }
+
+.about-main {
+  padding: 200px 0 100px;
+  text-align: center;
+  width: 100%;
+  background-image: url("/images/ramen.png");
+  color:#171212;
+  background-size: 300px;
+  background-color:rgba(255,255,255,0.8);
+  background-blend-mode:lighten;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+.about-main h2 {
+  font-size: 64px;
+  font-weight: 500;
+  line-height: 1.4;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+.about-main p {
+  font-weight: 200;
+  font-size: 20px;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+html, body {
+  height: 100%;
+}

@@ -11,10 +11,10 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <%# <div class="field">
     <%= form.label :タイトル %>
-    <%= form.text_field :title %>
-  </div>
+    <%# <%= form.text_field :title %> 
+  <%# </div> %> 
 
   <div class="field">
     <%= form.label :説明 %>
@@ -27,6 +27,12 @@
     <%= form.file_field :movie %>
   </div>
 
+  <div class="new_post_form">
+  <%= form_with(model: [@tag,@movie], local: true) do |f| %>
+    <%= f.text_field :title, placeholder: "タイトルを入力（35文字まで）", class: 'uk-input' %>
+    <%= f.text_field :tag_name, placeholder: "プログラミング技術や募集要項に関するタグをスペース区切りで5つまで入力(例 Ruby Rails )", class: 'uk-input uk-form-small' %>
+  <% end %>
+  
   <div class="actions">
     <%= form.submit %>
   </div>
