@@ -1,4 +1,6 @@
-https://gyazo.com/ed15b11f4198c80525af1992ad74d8c0
+![](https://i.gyazo.com/ed15b11f4198c80525af1992ad74d8c0.png)
+
+_Originally posted by @tsuyoshi-ueda-ri in https://github.com/tsuyoshi-ueda-ri/store_manual/issues/15#issuecomment-762301229_
 # STORE_MANUAL 
 ## commentsテーブル
 |Column|Type|Options|
