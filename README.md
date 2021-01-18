@@ -1,3 +1,4 @@
+https://gyazo.com/ed15b11f4198c80525af1992ad74d8c0
 # STORE_MANUAL 
 ## commentsテーブル
 |Column|Type|Options|
