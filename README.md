@@ -2,6 +2,9 @@
 
 # アプリ名
 ## STORE_MANUAL 
+
+# 概要
+
 ## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
