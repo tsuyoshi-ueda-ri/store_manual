@@ -118,3 +118,5 @@
 ### Association
 - belongs_to :movie
 - belongs_tp :tag
+
+![store](https://user-images.githubusercontent.com/63494238/105035865-07144180-5a9f-11eb-93ed-349c0c76b44c.png)
