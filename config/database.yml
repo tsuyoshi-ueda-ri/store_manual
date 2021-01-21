@@ -49,6 +49,9 @@ test:
 #
 production:
   <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
   database: store_manual_production
   username: store_manual
   password: <%= ENV['STORE_MANUAL_DATABASE_PASSWORD'] %>
