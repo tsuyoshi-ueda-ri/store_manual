@@ -59,3 +59,6 @@ gem 'pry-rails'
 gem 'font-awesome-rails'
 gem 'devise'
 gem 'kaminari'
+group :production do
+  gem 'unicorn', '5.4.1'
+end
