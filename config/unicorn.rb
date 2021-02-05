@@ -13,7 +13,7 @@ stderr_path "#{app_path}/log/unicorn.stderr.log"
 
 stdout_path "#{app_path}/log/unicorn.stdout.log"
 
-timeout 60
+timeout 100
 
 
 preload_app true
