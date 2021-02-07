@@ -55,4 +55,5 @@ production:
   database: store_manual_production
   username: root
   password: <%= ENV['DATABASE_PASSWORD'] %>
-  socket: /var/lib/mysql/mysql.sock
+  socket: /var/lib/mysql/store_manual_production
+  # socket: /var/lib/mysql/mysql.sock
